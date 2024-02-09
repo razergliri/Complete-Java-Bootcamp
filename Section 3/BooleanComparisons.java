@@ -52,7 +52,7 @@ public class BooleanComparisons {
         System.out.println("Java: " + (distance1 != distance2) + "\n");
 
         String word = "hello";
-        String secondWord = "hello";
+        String secondWord = "chocolate";
 
         System.out.println("Me: Are the two words the same?");
         System.out.println("Java: " + (word.equals(secondWord)) + "\n");
