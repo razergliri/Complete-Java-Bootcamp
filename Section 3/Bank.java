@@ -15,9 +15,19 @@ public class Bank {
             System.out.print("Your answer: ");
             double moneySavings = scan.nextDouble();
             double creditDebt = scan.nextDouble();
-            System.out.println("You have " + moneySavings + "$ in savings and " + creditDebt
-                    + "$ in credit debt.");
-            
+           
+            System.out.println("Agent: How many years have you worked for?");
+            System.out.print("Your answer: ");
+            int yearsOfWork = scan.nextInt();
+            System.out.println("Agent: What is your name?");
+            System.out.print("Your answer: "); scan.nextLine();
+            String userName = scan.nextLine();
+            if(moneySavings >= 10000 && creditDebt < 5000 && yearsOfWork > 2){
+                System.out.println("Agent: Congratulations " + userName + ", you have been approved!");
+            }else{
+                System.out.println("Agent: Sorry, you are not eligible for a mortgage");
+            }
+
             // Additional mortgage-related prompts and processing can go here
         } else {
             System.out.println("Agent: Okay. Have a nice day!");
