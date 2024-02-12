@@ -3,7 +3,7 @@ public class Scope {
     // Global variables to store the rectangle's length and width (accessible within the whole class)
     // static double length = 2;
     // static double width = 4;
-
+    // Local variables is much preferred because of it having debug easily
     public static void main(String[] args) {
 
         double length = 2;
