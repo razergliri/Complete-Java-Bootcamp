@@ -25,10 +25,10 @@ public class ForLoopExamples {
         System.out.println();
         // Example 5: Print the first 10 even numbers
         // TODO: Write a for loop that prints the first 10 even numbers
-        for(int i = 1; i <= 10; i++){
-            if(i % 2 == 0){
+        for(int i = 0; i <= 19; i+=2){
+           
                 System.out.print(i + " ");
-            }
+            
         }
     }
 
