@@ -8,9 +8,16 @@ public class TDArrays {
             {95, 98, 99, 100},
         };
 
-        System.out.println("\tHarry's Grades: " + Arrays.toString(grades[0]));
-        System.out.println("\tRon's Grades: " + Arrays.toString(grades[1]));
-        System.out.println("\tHermione's Grades: " + Arrays.toString(grades[2]));
+       for(int j = 0; j <grades[0].length; j++){
+            System.out.println(grades[0][j]);
+       }
 
+       for(int j = 0; j <grades[0].length; j++){
+            System.out.println(grades[1][j]);
+       }
+
+       for(int j = 0; j <grades[0].length; j++){
+        System.out.println(grades[2][j]);
+       }    
     }
 }
