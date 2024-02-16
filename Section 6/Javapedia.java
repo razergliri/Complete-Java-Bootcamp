@@ -13,23 +13,26 @@ public class Javapedia {
 
         for(int i = 0; i < figures; i++){
             System.out.println("\t\tFigure " + (i+1));
-            for(int j = 0; j < database[i].length; j++){
-                if(j==0){
-                    System.out.print("- Name: "); database[i][j] = scan.nextLine();
-                }else if(j==1){
-                    System.out.print("- Date of Birth: "); database[i][j] = scan.nextLine();
-                }else if(j==2){
-                    System.out.print("- Occupation: "); database[i][j] = scan.nextLine();
-                }
-            }
-            System.out.println();
+           System.out.print("\t - Name: ");
+           database[i][0] = scan.nextLine();
+           System.out.print("\t - Date of Birth: ");
+           database[i][1] = scan.nextLine();
+           System.out.print("\t - Occupation: ");
+           database[i][2] = scan.nextLine();
+           System.out.println();
         }
         print2DArray(database);
         
         System.out.println("What do you want information on?");
         System.out.print("Your answer: "); String query = scan.nextLine();
+        for(int i = 0; i < database.length;i++){
+            if(database[i][0].equals(query)){
+                System.out.println("\t - Name: " + database[i][0]);
+                System.out.println("\t - Date of Birth: " + database[i][1]);
+                System.out.println("\t - Occupation: " + database[i][2]);
+            }
+        }
         
-        printQuery(database, checkQueryIndex(database, query));
         scan.close();
     }
 
@@ -44,25 +47,7 @@ public class Javapedia {
         System.out.println();
     }
     
-    public static int checkQueryIndex(String[][] database, String query){
-        int queryIndex = 0;
-        for(int i = 0; i < database.length; i++){
-           if(query.equals(database[i][0])){
-            queryIndex = i;
-           }
-        }
-        return queryIndex;
-    }
+    
 
-    public static void printQuery(String[][] database, int queryIndex){
-        for(int i = 0; i < 3; i++){
-            if(i==0){
-                System.out.println("Name: " + database[queryIndex][i]);
-            }else if(i==1){
-                System.out.println("Date of Birth: " + database[queryIndex][i]);
-            }else if(i==2){
-                System.out.println("Occupation: " + database[queryIndex][i]);
-            }
-        }
-    }
+    
 }
