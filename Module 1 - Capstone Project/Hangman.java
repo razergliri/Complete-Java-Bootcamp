@@ -69,7 +69,7 @@ public class Hangman{
     static Scanner scan = new Scanner(System.in);
     public static void main(String[] args) {
         System.out.println("~~~WELCOME TO THE HANGMAN GAME~~~");
-        int misses = 0; int guesses = 0;
+        int misses = 0; int guesses = 6; char myGuess; int correctGuess = 0;
         System.out.println(words.length);
         String userRandomWord = randomWord();
         String maskedWord = userRandomWord.replaceAll("[a-zA-Z]", "_");
@@ -77,6 +77,18 @@ public class Hangman{
         System.out.println("Hidden Word " + maskedWord);
         char[] randWordHold = userRandomWord.toCharArray();
         System.out.println(randWordHold);
+        while(guesses != 0){
+            System.out.println("Guess: ");
+            myGuess = scan.next().charAt(0);
+            for(int i = 0; i< randWordHold.length; i++){
+                if(randWordHold[i] == myGuess){
+                    System.out.println("there's a match"); 
+                }else{
+                    misses++;
+                }
+            }
+        }
+        
     }
     public static String randomWord(){
         int randomNum = (int) (Math.random() * 64) + 1;
