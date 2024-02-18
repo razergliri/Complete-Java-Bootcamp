@@ -80,13 +80,7 @@ public class Hangman{
         while(guesses != 0){
             System.out.println("Guess: ");
             myGuess = scan.next().charAt(0);
-            for(int i = 0; i< randWordHold.length; i++){
-                if(randWordHold[i] == myGuess){
-                    System.out.println("there's a match"); 
-                }else{
-                    misses++;
-                }
-            }
+            
         }
         
     }
