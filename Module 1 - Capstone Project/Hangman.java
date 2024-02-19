@@ -86,7 +86,7 @@ public class Hangman{
             System.out.print("\nGuess: "); printGuess(myGuess);
             System.out.println("\n"+ printGallows(gallows, misses));
             System.out.print("Word: \t\t"); printMask(wordrand);
-            System.out.println("\n\nMisses: "); printMyMiss(myMisses);
+            System.out.print("\n\nMisses: "); printMyMiss(myMisses);
             System.out.print("\nGuess: ");
             myGuess = scan.next().charAt(0);
             for(int i = 0; i <randWordHold.length;i++){
@@ -94,7 +94,7 @@ public class Hangman{
                     wordrand[i] = randWordHold[i];
                     found = true; 
                     correctGuess++;
-                    break;
+                    
                 }
             }
             if(!found){
@@ -102,14 +102,19 @@ public class Hangman{
                 myMisses = myMisses.append(myGuess);
                 guesses--;
             }
-            
+
             if(correctGuess == randWordHold.length){
-                System.out.println("You win!");
+                System.out.print("\nGuess: "); printGuess(myGuess);
+                System.out.println("\n"+ printGallows(gallows, misses));
+                System.out.print("Word: \t\t"); printMask(wordrand);
+                System.out.println("\nYou win!");
                 break;
             }else if (guesses == 0){
-                System.out.println("You lose. The word was: " + userRandomWord);
+                System.out.print("\nGuess: "); printGuess(myGuess);
+                 System.out.println("\n"+ printGallows(gallows, misses));
+                System.out.println("RIP! You lose. The word was: " + userRandomWord);
             }
-
+           // System.out.print("\033[H\033[2J");
         }
         
     }
