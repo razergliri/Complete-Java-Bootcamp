@@ -67,27 +67,91 @@ public class Hangman{
             " =========\n"};
         
     static Scanner scan = new Scanner(System.in);
+
+
     public static void main(String[] args) {
         System.out.println("~~~WELCOME TO THE HANGMAN GAME~~~");
-        int misses = 0; int guesses = 6; char myGuess; int correctGuess = 0;
-        System.out.println(words.length);
+        int misses = 0; int guesses = 6; char myGuess = ' '; int correctGuess = 0;
         String userRandomWord = randomWord();
         String maskedWord = userRandomWord.replaceAll("[a-zA-Z]", "_");
-        System.out.println("Your randomWord: " + userRandomWord);
-        System.out.println("Hidden Word " + maskedWord);
         char[] randWordHold = userRandomWord.toCharArray();
-        System.out.println(randWordHold);
+        char[] wordrand = maskedWord.toCharArray();
+        StringBuilder myMisses = new StringBuilder(" ");
+        System.out.println(userRandomWord);
+       // System.out.println(randWordHold);
+        scan.nextLine();
         while(guesses != 0){
-            System.out.println("Guess: ");
+            boolean found = false;
+        //    System.out.print("\033[H\033[2J");
+            System.out.print("\nGuess: "); printGuess(myGuess);
+            System.out.println("\n"+ printGallows(gallows, misses));
+            System.out.print("Word: \t\t"); printMask(wordrand);
+            System.out.println("\n\nMisses: "); printMyMiss(myMisses);
+            System.out.print("\nGuess: ");
             myGuess = scan.next().charAt(0);
+            for(int i = 0; i <randWordHold.length;i++){
+                if(randWordHold[i] == myGuess){
+                    wordrand[i] = randWordHold[i];
+                    found = true; 
+                    correctGuess++;
+                    break;
+                }
+            }
+            if(!found){
+                misses++;
+                myMisses = myMisses.append(myGuess);
+                guesses--;
+            }
             
+            if(correctGuess == randWordHold.length){
+                System.out.println("You win!");
+                break;
+            }else if (guesses == 0){
+                System.out.println("You lose. The word was: " + userRandomWord);
+            }
+
         }
         
     }
+    public static boolean checkGuess(char[] randWordHold, char myGuess){
+        boolean found = false;
+        for(int i = 0; i < randWordHold.length; i++){
+            if(randWordHold[i] == myGuess){
+                found = true; break;
+            }
+        }
+        return found;
+
+    }
+    public static void printMyMiss(StringBuilder myMisses){
+        System.out.print(myMisses);
+    }
+    public static void printGuess(char myGuess){
+        System.out.print(myGuess);
+    }
+    public static void printMask(char[] wordrand){
+        for(int i = 0; i < wordrand.length; i++){
+            System.out.print(wordrand[i] + " ");
+        }
+    }
+
     public static String randomWord(){
         int randomNum = (int) (Math.random() * 64) + 1;
         String randomedWord = words[randomNum];
         return randomedWord;
+    }
+
+    public static String printGallows(String[] gallows, int misses){
+        switch (misses) {
+            case 0: return gallows[0]; 
+            case 1: return gallows[1]; 
+            case 2: return gallows[2]; 
+            case 3: return gallows[3]; 
+            case 4: return gallows[4]; 
+            case 5: return gallows[5]; 
+            case 6: return gallows[6]; 
+            default: return "This must not be called";
+        }
     }
     
 }
