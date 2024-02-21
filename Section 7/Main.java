@@ -7,29 +7,33 @@ public class Main{
 
         Car dodge = new Car("Dodge", 11000, 2019, "Blue");
         
-        nissan.setColor("Jet Black");
-        dodge.setColor("Jet Black");
+        Car nissan2 = new Car(nissan);
 
-        nissan.setPrice(nissan.getPrice()/2);
-        dodge.setPrice(nissan.getPrice()/2);
+        nissan2.setColor("Yellow");
+        nissan.setColor("Orange");
+        nissan2.setColor("Blue");
+        nissan.setColor("Purple");
+        nissan2.setColor("Fuchsia");
+        nissan.setColor("Beige");
 
         System.out.println("This " + nissan.getMake() + " is worth $" + nissan.getPrice() + 
         ". It was built in " + nissan.getYear() + ". It is " + nissan.getColor() + ".\n");
-        System.out.println("This " + dodge.getMake() + " is worth $" + dodge.getPrice() + 
-        ". It was built in " + dodge.getYear() + ". It is " + dodge.getColor() + ".\n");
+        System.out.println("This " + nissan2.getMake() + " is worth $" + nissan2.getPrice() + 
+        ". It was built in " + nissan2.getYear() + ". It is " + nissan2.getColor() + ".\n");
         
         Person person = new Person("Shamel", "Filipino", "06/16/2004", 7);
         
-        person.passport = new String[] {person.name, person.nationality, person.dateOfBirth};
-        
-        System.out.println("Name: " + person.name + "\n" + "Nationality: " + person.nationality
-            + "\n" + "Date of Birth: " + person.dateOfBirth + "\n" + "Seat Number: "
-            + person.seatNumber + "\n");
+       // person.passport = new String[] {person.name, person.nationality, person.dateOfBirth};
+       Shirt nike = new Shirt("Nike", 20.00, "Small");
+       System.out.println("Brand: " + nike.getBrand());
+       System.out.println("Price: " + nike.getPrice());
+       System.out.println("Size: " + nike.getSize()); 
+
+        System.out.println("Name: " + person.getName() + "\n" + "Nationality: " + person.getNationality()
+            + "\n" + "Date of Birth: " + person.getDateOfBirth() + "\n" + "Seat Number: "
+            + person.getSeatNumber() + "\n");
 
 
-        Shirt nike = new Shirt("Nike", 20.00, "Small");
-        System.out.println("Brand: " + nike.getBrand());
-        System.out.println("Price: " + nike.getPrice());
-        System.out.println("Size: " + nike.getSize());
+       
     }
 }
