@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Car {
     private String make;
     private double price;
@@ -11,7 +13,7 @@ public class Car {
         this.price = price;
         this.year = year;
         this.color = color;
-        this.parts = parts;
+        this.parts = Arrays.copyOf(parts, parts.length);
     }
 
     public Car(Car source){
@@ -19,16 +21,16 @@ public class Car {
         this.price = source.price;
         this.year = source.year;
         this.color = source.color;
-        this.parts = source.parts;
+        this.parts = Arrays.copyOf(source.parts, source.parts.length);
     }
 
 
     public String[] getParts() {
-        return this.parts;
+        return Arrays.copyOf(this.parts, this.parts.length);
     }
 
     public void setParts(String[] parts) {
-        this.parts = parts;
+        this.parts = Arrays.copyOf(parts, parts.length);
     }
 
     public String getMake() {
