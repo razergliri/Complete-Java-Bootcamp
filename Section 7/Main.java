@@ -23,6 +23,7 @@ public class Main{
     System.out.println(nissan);
     System.out.println(dodge);
     System.out.println(nissan2);
+    System.out.println(person);
 
     }
 }
