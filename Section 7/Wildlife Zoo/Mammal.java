@@ -37,4 +37,8 @@ public class Mammal {
         System.out.println("Age: " + age);
         System.out.println("Domestic: " + (isDomestic ? "Yes" : "No"));
     }
+
+    public void makeSound(){
+        System.out.println("The " + species + " is making a sound");
+    }
 }
