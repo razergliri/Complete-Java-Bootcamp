@@ -1,30 +1,29 @@
-import java.util.Scanner;
+
 
 public class Main {
     public static void main(String[] args) {
-
-        Scanner scan = new Scanner(System.in);
-        
-        Car[] cars = new Car[] {
-            new Car("Nissan", 5000, 2020, "red", new String[] {"tires", "keys"}),
-            new Car("Dodge", 8500, 2019, "blue", new String[] {"tires", "keys"}),
-            new Car("Nissan", 5000, 2017, "yellow", new String[] {"tires", "filter"}),
-            new Car("Honda", 7000, 2019, "orange", new String[] {"tires", "filter"}),
-            new Car("Mercedes", 12000, 2015, "jet black", new String[] {"tires", "filter", "transmission"})
+        Person[] people = new Person[] { 
+            new Person("Cleopatra", "Egypt", "69 BC", 1),
+            new Person("Alexander the Great", "Macedon", "356 BC", 2),
+            new Person("Julius Caesar", "Rome", "100 BC", 3),
+            new Person("Hannibal", "Carthage", "247 BC", 4),
+            new Person("Confucius", "China", "551 BC", 5),
+            new Person("Pericles", "Greece", "429 BC", 6),
+            new Person("Spartacus", "Thrace", "111 BC", 7),
+            new Person("Marcus Aurelius", "Rome", "121 AD", 8),
+            new Person("Leonidas", "Greece", "540 BC", 9),
+            new Person("Sun Tzu", "China", "544 BC", 10),
+            new Person("Hammurabi", "Babylon", "1750 BC", 10),
         };
+        Airline airline = new Airline();
         
-        Dealership dealership = new Dealership(cars);
-        
+    
+        for(int i =0; i < people.length; i++){
+          boolean passportApproved = people[i].applyPassport();
+          airline.createReservation(people[i]);
+        }
 
-        System.out.println("\n ****** JAVA DEALERSHIP! ****** \n");        
-        System.out.println("Feel free to browse through our collection of cars.\n");
-        System.out.println(dealership);
-        System.out.println("Which car are you interested in? (0 - 4).\n");
-        int index = scan.nextInt();
-        dealership.sell(index);
-        // sell car here... 
-
-        scan.close();
-
+      
+    
     }
 }
