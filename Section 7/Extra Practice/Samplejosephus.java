@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Samplejosephus {
     public static int josephus(int n, int k) {
         if (n == 1) {
@@ -7,10 +9,21 @@ public class Samplejosephus {
         }
     }
     public static void main(String[] args) {
-        int numberOfPeople = 10;
-        int k = 2; // You can adjust k as needed
+        Scanner scanner = new Scanner(System.in);
 
-        int survivorPosition = josephus(numberOfPeople, k);
-        System.out.println("The survivor is at position: " + survivorPosition);
+        System.out.print("Enter the number of people: ");
+        int numberOfPeople = scanner.nextInt();
+
+        System.out.print("Enter the value of k: ");
+        int k = scanner.nextInt();
+
+        if (numberOfPeople <= 0 || k <= 0) {
+            System.out.println("Please enter valid values for the number of people and k.");
+        } else {
+            int survivorPosition = josephus(numberOfPeople, k);
+            System.out.println("The survivor is at position: " + survivorPosition);
+        }
+
+        scanner.close();
     }
 }
