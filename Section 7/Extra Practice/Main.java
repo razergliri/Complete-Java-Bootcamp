@@ -9,6 +9,7 @@ public class Main {
     
         Contact copyContact1 = new Contact(contact1);
         Contact copyContact2 = new Contact(contact3);
+        contact1.setBirthDate("1989-01-01");
     
     }
 }
