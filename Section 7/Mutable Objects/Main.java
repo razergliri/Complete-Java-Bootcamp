@@ -8,7 +8,8 @@ public class Main{
 
         System.out.println(applesWrapper);
         System.out.println(applesWrapper2);
-
+        String a = "hi";
+        String b = a;
         //*****************************MUTABLE OBJECT *************************/
 
         City city = new City("Paris", 21610000);
