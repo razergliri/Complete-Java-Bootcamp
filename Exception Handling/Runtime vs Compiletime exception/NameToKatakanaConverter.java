@@ -15,7 +15,7 @@ public class NameToKatakanaConverter {
 
         // Output the Katakana counterpart
         System.out.println("Your name in Katakana: " + katakanaName);
-
+        System.out.println("Katakuri is back");
         // Close the Scanner
         scanner.close();
     }
