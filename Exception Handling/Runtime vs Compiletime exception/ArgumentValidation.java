@@ -27,8 +27,9 @@ public class ArgumentValidation {
             }
         } else{
             scanner.nextLine();   
-            
+
         }
+        System.out.println("Determiner option is not allowed");
        
         
         
