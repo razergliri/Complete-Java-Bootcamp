@@ -77,7 +77,7 @@ public class Hangman{
         char[] randWordHold = userRandomWord.toCharArray();
         char[] wordrand = maskedWord.toCharArray();
         StringBuilder myMisses = new StringBuilder(" ");
-        System.out.println(userRandomWord);
+       
        // System.out.println(randWordHold);
         scan.nextLine();
         while(guesses != 0){
@@ -107,7 +107,8 @@ public class Hangman{
                 System.out.print("\nGuess: "); printGuess(myGuess);
                 System.out.println("\n"+ printGallows(gallows, misses));
                 System.out.print("Word: \t\t"); printMask(wordrand);
-                System.out.println("\nYou win!");
+                System.out.println("\nCongratulations you made it! You win!");
+                System.out.println("Indeed! The correct word you guessed is " + userRandomWord);
                 break;
             }else if (guesses == 0){
                 System.out.print("\nGuess: "); printGuess(myGuess);
