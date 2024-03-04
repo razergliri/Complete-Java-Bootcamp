@@ -9,7 +9,12 @@ public class CreationReverse {
         System.out.println(userInput.toCharArray());
         char[] userInputs = userInput.toCharArray();
         for(int i = userInputs.length - 1; i >= 0; i--){
-            System.out.print(userInputs[i] + " ");
+            System.out.print(userInputs[i] );
         }
+       int num = 5;
+       while (num > 0) {
+        System.out.println(userInputs[num]);
+        num--;
+       }
     }
 }
