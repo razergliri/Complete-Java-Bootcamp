@@ -22,7 +22,7 @@ public class Main{
 
 
         System.out.println("City added to the tracker: " + newCity.getName());
-
+        System.out.println("The people of " + newCity.getCountry() + ". Has a population of " + newCity.getPopulation());
     
     
     }
