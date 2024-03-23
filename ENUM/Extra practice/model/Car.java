@@ -15,10 +15,16 @@ public class Car {
         setProductionYear(productionYear);
         setPrice(price);
     }
-
+    public Car(Car source){
+        setMake(source.make);
+        setModel(source.model);
+        setBodyType(source.bodyType);
+        setProductionYear(source.productionYear);
+        setPrice(source.price);
+    }
 
     public  enum BodyType{
-        SEDAN, COUPET, HATCHBACK, SUV, VAN, TRUCK
+        SEDAN, COUPE, HATCHBACK, SUV, VAN, TRUCK
     }
     public static final int MIN_YEAR = 1900;
     public static final double MIN_PRICE = 0;
