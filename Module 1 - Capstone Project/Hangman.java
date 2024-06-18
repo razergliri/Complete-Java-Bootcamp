@@ -9,6 +9,7 @@ public class Hangman{
        "ram", "rat", "raven","rhino", "salmon", "seal", "shark", "sheep", "skunk",
         "sloth", "snake", "spider", "stork", "swan", "tiger", "toad", "trout",
          "turkey","turtle", "weasel", "whale", "wolf", "wombat", "zebra"};
+
     public static String[] gallows = {
             "+---+\n" +
             "|   |\n" +
@@ -82,7 +83,7 @@ public class Hangman{
         scan.nextLine();
         while(guesses != 0){
             boolean found = false;
-        //    System.out.print("\033[H\033[2J");
+         System.out.print("\033[H\033[2J");
             System.out.print("\nGuess: "); printGuess(myGuess);
             System.out.println("\n"+ printGallows(gallows, misses));
             System.out.print("Word: \t\t"); printMask(wordrand);
@@ -111,8 +112,10 @@ public class Hangman{
                 System.out.println("Indeed! The correct word you guessed is " + userRandomWord);
                 break;
             }else if (guesses == 0){
+                
                 System.out.print("\nGuess: "); printGuess(myGuess);
-                 System.out.println("\n"+ printGallows(gallows, misses));
+                System.out.print("\n\nMisses: "); printMyMiss(myMisses);
+                System.out.println("\n"+ printGallows(gallows, misses));
                 System.out.println("RIP! You lose. The word was: " + userRandomWord);
             }
            // System.out.print("\033[H\033[2J");
